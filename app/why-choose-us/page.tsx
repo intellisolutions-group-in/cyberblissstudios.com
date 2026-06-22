@@ -2,7 +2,8 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { Card, CardContent } from "@/components/ui/card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import { CheckCircle } from "lucide-react"
 import company from "@/data/company.json"
 
@@ -12,6 +13,8 @@ export const metadata = createMetadata({
   keywords: ["why choose us", "software development partner", "IT company India"],
   path: "/why-choose-us/",
 })
+
+const pageDescription = `Discover why businesses trust ${company.brandName} for custom software development, enterprise solutions, and long-term technology partnerships.`
 
 const reasons = [
   {
@@ -51,9 +54,17 @@ const reasons = [
 export default function WhyChooseUsPage() {
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Why Choose Us | ${company.brandName}`,
+          description: pageDescription,
+          path: "/why-choose-us/",
+        })}
+      />
       <InnerPage
         title="Why Choose Us"
         subtitle="The reasons businesses across India trust CyberBliss Studios for their software development needs"
+        path="/why-choose-us/"
       >
         <div className="container mx-auto px-4 max-w-4xl space-y-8">
           {reasons.map((reason, index) => (

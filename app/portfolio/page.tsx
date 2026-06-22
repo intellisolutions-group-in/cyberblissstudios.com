@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import portfolio from "@/data/portfolio.json"
 import company from "@/data/company.json"
 
@@ -14,12 +15,22 @@ export const metadata = createMetadata({
   path: "/portfolio/",
 })
 
+const pageDescription = `Explore software projects delivered by ${company.brandName} across healthcare, logistics, retail, education, and more.`
+
 export default function PortfolioPage() {
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Portfolio and Case Studies | ${company.brandName}`,
+          description: pageDescription,
+          path: "/portfolio/",
+        })}
+      />
       <InnerPage
         title="Portfolio"
         subtitle="A selection of software solutions delivered for clients across diverse industries"
+        path="/portfolio/"
       >
         <div className="container mx-auto px-4 max-w-4xl space-y-12">
           {portfolio.map((project, index) => (

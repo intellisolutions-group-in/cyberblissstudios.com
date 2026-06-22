@@ -2,7 +2,8 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, faqSchema } from "@/lib/seo"
 import faqData from "@/data/faq.json"
 import company from "@/data/company.json"
 
@@ -13,12 +14,16 @@ export const metadata = createMetadata({
   path: "/faq/",
 })
 
+const allFaqs = faqData.flatMap((cat) => cat.items)
+
 export default function FAQPage() {
   return (
     <>
+      <JsonLd data={faqSchema(allFaqs)} />
       <InnerPage
         title="Frequently Asked Questions"
         subtitle="Answers to common questions about our services, process, and how we work"
+        path="/faq/"
       >
         <div className="container mx-auto px-4 max-w-4xl space-y-12">
           {faqData.map((category, categoryIndex) => (

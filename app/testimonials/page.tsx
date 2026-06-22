@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, reviewSchema } from "@/lib/seo"
 import testimonials from "@/data/testimonials.json"
 import company from "@/data/company.json"
 import { Star } from "lucide-react"
@@ -18,9 +19,11 @@ export const metadata = createMetadata({
 export default function TestimonialsPage() {
   return (
     <>
+      <JsonLd data={reviewSchema(testimonials)} />
       <InnerPage
         title="Client Testimonials"
         subtitle="Feedback from clients who have partnered with us on software development projects"
+        path="/testimonials/"
       >
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -48,7 +51,7 @@ export default function TestimonialsPage() {
                       <div>
                         <p className="font-semibold text-white font-geist">{testimonial.name}</p>
                         <p className="text-sm text-gray-400 font-geist">
-                          {testimonial.designation}, {testimonial.company}
+                          {testimonial.designation}
                         </p>
                       </div>
                     </div>

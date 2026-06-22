@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { BlogCard } from "@/components/ui/blog-card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { articleSchema, createMetadata } from "@/lib/seo"
 import {
   formatBlogDate,
   getAllPostSlugs,
@@ -32,6 +33,9 @@ export async function generateMetadata({ params }: Props) {
     description: post.excerpt,
     keywords: [...post.tags, post.category, "software blog"],
     path: `/blog/${slug}/`,
+    ogType: "article",
+    publishedTime: post.publishedAt,
+    authors: [post.author],
   })
 }
 
@@ -41,10 +45,20 @@ export default async function BlogDetailPage({ params }: Props) {
   if (!post) notFound()
 
   const related = getRelatedPosts(slug)
+  const postPath = `/blog/${slug}/`
 
   return (
     <>
-      <InnerPage title={post.title} subtitle={post.excerpt}>
+      <JsonLd
+        data={articleSchema({
+          title: post.title,
+          description: post.excerpt,
+          path: postPath,
+          publishedAt: post.publishedAt,
+          author: post.author,
+        })}
+      />
+      <InnerPage title={post.title} subtitle={post.excerpt} path={postPath}>
         <article className="container mx-auto px-4 max-w-3xl">
           <SlideUp>
             <div className="flex flex-wrap items-center gap-3 mb-8 pb-6 border-b border-red-500/20">

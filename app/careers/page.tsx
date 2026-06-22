@@ -2,7 +2,8 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { JobCard } from "@/components/ui/job-card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, jobPostingSchema } from "@/lib/seo"
 import careers from "@/data/careers.json"
 import company from "@/data/company.json"
 
@@ -16,9 +17,11 @@ export const metadata = createMetadata({
 export default function CareersPage() {
   return (
     <>
+      <JsonLd data={jobPostingSchema(careers)} />
       <InnerPage
         title="Careers"
         subtitle="Build your career with a team that values engineering excellence and continuous growth"
+        path="/careers/"
       >
         <div className="container mx-auto px-4 max-w-4xl">
           <SlideUp>

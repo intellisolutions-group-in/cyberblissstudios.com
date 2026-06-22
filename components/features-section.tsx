@@ -17,7 +17,7 @@ const features: { title: string; description: string; icon: LucideIcon; badge: s
   },
   {
     title: "Security First",
-    description: "Secure coding practices, encrypted data handling, and compliance-aware architecture from day one.",
+    description: "Secure coding practices, encrypted data handling, and security-conscious architecture from day one.",
     icon: Shield,
     badge: "Secure",
   },
@@ -29,7 +29,7 @@ const features: { title: string; description: string; icon: LucideIcon; badge: s
   },
   {
     title: "Cloud Ready",
-    description: "Scalable cloud deployments on AWS, Azure, and Google Cloud with reliable infrastructure design.",
+    description: "Scalable cloud deployments on leading cloud platforms with reliable infrastructure design.",
     icon: Cloud,
     badge: "Cloud",
   },

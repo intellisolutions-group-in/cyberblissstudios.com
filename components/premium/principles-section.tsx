@@ -22,7 +22,7 @@ const principles: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: Lock,
     title: "Security by Design",
-    description: "Secure coding, encrypted data, and compliance-aware development.",
+    description: "Secure coding, encrypted data, and security-conscious development.",
   },
   {
     icon: Zap,

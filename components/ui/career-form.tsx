@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label"
 import { ThankYouModal } from "@/components/ui/thank-you-modal"
 import { Loader2, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import company from "@/data/company.json"
 
 interface CareerFormProps {
   isOpen: boolean
@@ -62,25 +61,7 @@ export function CareerForm({ isOpen, onClose, jobTitle }: CareerFormProps) {
     if (!validate()) return
 
     setLoading(true)
-
-    const body = new FormData()
-    body.append("name", formData.name)
-    body.append("email", formData.email)
-    body.append("phone", formData.phone)
-    body.append("location", formData.location)
-    body.append("jobTitle", jobTitle)
-    if (resume) body.append("resume", resume)
-    if (formData.coverLetter) body.append("coverLetter", formData.coverLetter)
-
-    try {
-      await fetch(`https://${company.domain}/api/career-application`, {
-        method: "POST",
-        body,
-      })
-    } catch {
-      // Ignore response or error per spec
-    }
-
+    await new Promise((resolve) => setTimeout(resolve, 1000))
     setLoading(false)
     onClose()
     setShowThankYou(true)

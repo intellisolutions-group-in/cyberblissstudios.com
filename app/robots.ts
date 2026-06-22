@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import company from "@/data/company.json"
+import { SITE_URL } from "@/lib/seo"
 
 export const dynamic = "force-static"
 
@@ -9,6 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${company.url}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   }
 }

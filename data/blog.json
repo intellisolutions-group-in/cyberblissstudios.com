@@ -4,7 +4,7 @@
     "title": "How to Choose a Custom Software Development Partner in India",
     "excerpt": "A practical checklist for evaluating Indian software vendors on delivery quality, transparency, security, and long-term partnership fit.",
     "category": "Business",
-    "author": "CyberBliss Studios",
+    "author": "Editorial Team",
     "publishedAt": "2025-11-12",
     "readTimeMinutes": 7,
     "tags": ["outsourcing", "vendor selection", "India", "custom software"],
@@ -31,7 +31,7 @@
         ]
       },
       {
-        "heading": "Verify Security and Compliance Awareness",
+        "heading": "Verify Security Awareness",
         "paragraphs": [
           "Indian partners serving domestic and international clients must demonstrate security-conscious development. Ask about secure coding practices, data handling policies, access controls, and experience with relevant regulations. Partners should treat security as a baseline requirement, not an optional add-on quoted separately at the end.",
           "Request information about how credentials, production data, and intellectual property are protected during and after engagement."
@@ -51,7 +51,7 @@
     "title": "Why Next.js Is a Strong Choice for Enterprise Web Applications",
     "excerpt": "How Next.js supports performance, SEO, security, and maintainability for business-critical web platforms.",
     "category": "Web Development",
-    "author": "CyberBliss Studios",
+    "author": "Editorial Team",
     "publishedAt": "2025-10-28",
     "readTimeMinutes": 6,
     "tags": ["Next.js", "React", "enterprise", "web development"],
@@ -88,7 +88,7 @@
         "heading": "When Next.js May Not Fit",
         "paragraphs": [
           "Next.js is not universal. Heavy real-time collaboration tools, native mobile experiences, or deeply embedded desktop integrations may suit other stacks better. The decision should follow requirements analysis—not hype. Our teams evaluate rendering models, hosting costs, and team skills before recommending any framework.",
-          "If you are planning a new web platform or modernising an existing one, a structured discovery workshop helps determine whether Next.js aligns with your roadmap, compliance needs, and operational constraints."
+          "If you are planning a new web platform or modernising an existing one, a structured discovery workshop helps determine whether Next.js aligns with your roadmap, security needs, and operational constraints."
         ]
       }
     ]
@@ -98,7 +98,7 @@
     "title": "Agile vs Waterfall: Choosing the Right Model for Your Software Project",
     "excerpt": "Compare delivery models honestly and learn when Agile sprints, fixed-scope Waterfall, or hybrid approaches make the most sense.",
     "category": "Process",
-    "author": "CyberBliss Studios",
+    "author": "Editorial Team",
     "publishedAt": "2025-09-15",
     "readTimeMinutes": 8,
     "tags": ["Agile", "Waterfall", "SDLC", "project management"],
@@ -107,7 +107,7 @@
       {
         "paragraphs": [
           "Software delivery models shape how requirements evolve, how risk is managed, and how stakeholders experience progress. Agile and Waterfall are often presented as opposites, but mature organisations use elements of both depending on project type, regulatory context, and certainty of scope.",
-          "At CyberBliss Studios, most product development engagements follow Agile two-week sprints with regular demos. Fixed-scope Waterfall remains appropriate for well-defined migrations, compliance-driven builds, and projects with frozen specifications."
+          "At CyberBliss Studios, most product development engagements follow Agile two-week sprints with regular demos. Fixed-scope Waterfall remains appropriate for well-defined migrations, specification-driven builds, and projects with frozen requirements."
         ]
       },
       {
@@ -128,7 +128,7 @@
         "heading": "Hybrid Approaches in Practice",
         "paragraphs": [
           "Many clients combine models: Waterfall-style discovery and architecture phases followed by Agile build sprints. Fixed-scope modules within a broader Agile programme allow procurement teams to satisfy contract requirements while preserving iteration where uncertainty remains high.",
-          "The wrong question is which model is better universally. The right question is which model fits your uncertainty, compliance constraints, and internal capacity to participate in delivery."
+          "The wrong question is which model is better universally. The right question is which model fits your uncertainty, business constraints, and internal capacity to participate in delivery."
         ]
       },
       {
@@ -145,7 +145,7 @@
     "title": "Mobile App Development Trends Indian Businesses Should Watch in 2025",
     "excerpt": "Cross-platform frameworks, offline-first design, regional payments, and performance expectations shaping mobile products in India.",
     "category": "Mobile",
-    "author": "CyberBliss Studios",
+    "author": "Editorial Team",
     "publishedAt": "2025-08-22",
     "readTimeMinutes": 6,
     "tags": ["mobile apps", "Flutter", "React Native", "India"],
@@ -174,7 +174,7 @@
       {
         "heading": "Payments and Local Integrations",
         "paragraphs": [
-          "Indian mobile products frequently integrate UPI, Razorpay, PayU, and enterprise billing systems. Payment flows must handle failure states gracefully and comply with platform store policies. SMS OTP, Aadhaar-linked verification, and GST invoicing appear regularly in domestic B2B applications.",
+          "Indian mobile products frequently integrate UPI, domestic payment gateways, and enterprise billing systems. Payment flows must handle failure states gracefully and comply with platform store policies. SMS OTP, identity verification, and GST invoicing appear regularly in domestic B2B applications.",
           "Partners with prior integration experience reduce trial-and-error during implementation."
         ]
       },
@@ -192,10 +192,10 @@
     "title": "Securing Business Applications: Best Practices for Growing Companies",
     "excerpt": "Foundational security practices every organisation should embed during design, development, deployment, and maintenance.",
     "category": "Security",
-    "author": "CyberBliss Studios",
+    "author": "Editorial Team",
     "publishedAt": "2025-07-10",
     "readTimeMinutes": 7,
-    "tags": ["security", "compliance", "secure coding", "DevOps"],
+    "tags": ["security", "secure coding", "DevOps"],
     "relatedSlugs": ["choosing-custom-software-development-partner-india", "cloud-migration-strategies-indian-smes"],
     "sections": [
       {
@@ -237,12 +237,12 @@
   {
     "slug": "cloud-migration-strategies-indian-smes",
     "title": "Cloud Migration Strategies for Indian SMEs: A Practical Roadmap",
-    "excerpt": "How small and mid-sized businesses can move workloads to AWS, Azure, or Google Cloud with controlled risk and clear ROI.",
+    "excerpt": "How small and mid-sized businesses can move workloads to cloud platforms with controlled risk and clear ROI.",
     "category": "Cloud",
-    "author": "CyberBliss Studios",
+    "author": "Editorial Team",
     "publishedAt": "2025-06-05",
     "readTimeMinutes": 8,
-    "tags": ["cloud", "AWS", "Azure", "migration", "SME"],
+    "tags": ["cloud", "migration", "SME"],
     "relatedSlugs": ["why-nextjs-enterprise-web-applications", "securing-business-applications-best-practices"],
     "sections": [
       {
@@ -254,7 +254,7 @@
       {
         "heading": "Assess Before You Migrate",
         "paragraphs": [
-          "Inventory applications, dependencies, data volumes, integration points, and compliance obligations. Not every workload belongs in the public cloud immediately. Some systems benefit from rehosting; others require refactoring or replacement.",
+          "Inventory applications, dependencies, data volumes, integration points, and data governance obligations. Not every workload belongs in the public cloud immediately. Some systems benefit from rehosting; others require refactoring or replacement.",
           "A migration readiness assessment identifies quick wins—static websites, file storage, backup systems—and complex candidates requiring deeper analysis."
         ]
       },

@@ -6,13 +6,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-black border-t border-red-500/20">
+    <footer className="bg-black border-t border-red-500/20" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="sm:col-span-2 lg:col-span-2">
-            <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
+            <p className="font-orbitron text-2xl font-bold text-white mb-4">
               Cyber<span className="text-red-500">Bliss</span> Studios
-            </h2>
+            </p>
             {/* Logo placeholder - uncomment when logo is available
             <Image
               src="/images/logo.svg"

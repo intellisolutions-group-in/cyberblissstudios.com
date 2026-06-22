@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button"
 import { SlideUp } from "@/components/ui/slide-up"
 import { AnimatedCounter } from "@/components/premium/animated-counter"
 import company from "@/data/company.json"
+import { getServiceCount, getYearsSinceEstablishment } from "@/lib/company-stats"
 
 export function AboutSection() {
-  const years = new Date().getFullYear() - company.establishedYear
+  const years = getYearsSinceEstablishment()
+  const serviceCount = getServiceCount()
 
   return (
     <section className="relative py-24 px-6 bg-background overflow-hidden">
@@ -44,7 +46,7 @@ export function AboutSection() {
             <SlideUp index={1} hover>
               <div className="glow-border glass-card rounded-lg p-6 text-center h-full">
                 <p className="text-4xl font-bold text-red-500 font-orbitron">
-                  <AnimatedCounter value={18} suffix="+" />
+                  <AnimatedCounter value={serviceCount} suffix="+" />
                 </p>
                 <p className="text-muted-foreground font-geist mt-2">Service Areas</p>
               </div>

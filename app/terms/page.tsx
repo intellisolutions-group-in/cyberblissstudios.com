@@ -1,6 +1,7 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { SlideUp } from "@/components/ui/slide-up"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
 export const metadata = createMetadata({
@@ -9,9 +10,23 @@ export const metadata = createMetadata({
   path: "/terms/",
 })
 
+const pageDescription = `Terms of Service for ${company.brandName} website and software development services.`
+
 export default function TermsOfService() {
   return (
-    <InnerPage title="Terms of Service" subtitle="Terms governing use of our website and software development services">
+    <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Terms of Service | ${company.brandName}`,
+          description: pageDescription,
+          path: "/terms/",
+        })}
+      />
+      <InnerPage
+        title="Terms of Service"
+        subtitle="Terms governing use of our website and software development services"
+        path="/terms/"
+      >
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="space-y-8">
           <SlideUp>
@@ -91,5 +106,6 @@ export default function TermsOfService() {
         </div>
       </div>
     </InnerPage>
+    </>
   )
 }
