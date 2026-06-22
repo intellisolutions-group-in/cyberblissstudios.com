@@ -3,7 +3,7 @@ import { ServiceCard } from "@/components/ui/service-card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, webPageSchema } from "@/lib/seo"
+import { createMetadata, itemListSchema, webPageSchema } from "@/lib/seo"
 import { services } from "@/lib/services"
 import company from "@/data/company.json"
 
@@ -22,11 +22,23 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd
-        data={webPageSchema({
-          title: `Software Development Services | ${company.brandName}`,
-          description: pageDescription,
-          path: "/services/",
-        })}
+        data={[
+          webPageSchema({
+            title: `Software Development Services | ${company.brandName}`,
+            description: pageDescription,
+            path: "/services/",
+          }),
+          itemListSchema({
+            name: "Software Development Services",
+            description: pageDescription,
+            path: "/services/",
+            items: services.map((s) => ({
+              name: s.title,
+              path: `/services/${s.slug}/`,
+              description: s.shortDescription,
+            })),
+          }),
+        ]}
       />
       <InnerPage
         title="Our Services"

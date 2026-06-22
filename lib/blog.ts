@@ -58,3 +58,14 @@ export function formatBlogDate(date: string): string {
     year: "numeric",
   })
 }
+
+export function getPostWordCount(post: BlogPost): number {
+  const text = [
+    post.excerpt,
+    ...post.sections.flatMap((section) => [
+      section.heading ?? "",
+      ...section.paragraphs,
+    ]),
+  ].join(" ")
+  return text.split(/\s+/).filter(Boolean).length
+}

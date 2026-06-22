@@ -2,7 +2,7 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { BlogCard } from "@/components/ui/blog-card"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, webPageSchema } from "@/lib/seo"
+import { createMetadata, blogCollectionSchema, webPageSchema } from "@/lib/seo"
 import { getAllPosts } from "@/lib/blog"
 import company from "@/data/company.json"
 
@@ -21,11 +21,21 @@ export default function BlogPage() {
   return (
     <>
       <JsonLd
-        data={webPageSchema({
-          title: `Blog | ${company.brandName}`,
-          description: pageDescription,
-          path: "/blog/",
-        })}
+        data={[
+          webPageSchema({
+            title: `Blog | ${company.brandName}`,
+            description: pageDescription,
+            path: "/blog/",
+          }),
+          blogCollectionSchema(
+            posts.map((post) => ({
+              title: post.title,
+              path: `/blog/${post.slug}/`,
+              publishedAt: post.publishedAt,
+              description: post.excerpt,
+            }))
+          ),
+        ]}
       />
       <InnerPage
         title="Blog"

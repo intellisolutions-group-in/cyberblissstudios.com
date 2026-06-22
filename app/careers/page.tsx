@@ -3,7 +3,7 @@ import { JobCard } from "@/components/ui/job-card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, jobPostingSchema } from "@/lib/seo"
+import { createMetadata, jobPostingSchema, webPageSchema } from "@/lib/seo"
 import careers from "@/data/careers.json"
 import company from "@/data/company.json"
 
@@ -14,10 +14,21 @@ export const metadata = createMetadata({
   path: "/careers/",
 })
 
+const pageDescription = `Join ${company.brandName} and build innovative software solutions. Explore current job openings in engineering, design, and more.`
+
 export default function CareersPage() {
   return (
     <>
-      <JsonLd data={jobPostingSchema(careers)} />
+      <JsonLd
+        data={[
+          webPageSchema({
+            title: `Careers | ${company.brandName}`,
+            description: pageDescription,
+            path: "/careers/",
+          }),
+          ...jobPostingSchema(careers),
+        ]}
+      />
       <InnerPage
         title="Careers"
         subtitle="Build your career with a team that values engineering excellence and continuous growth"
