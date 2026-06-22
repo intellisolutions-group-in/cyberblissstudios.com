@@ -8,7 +8,7 @@ import { formatBlogDate, type BlogPost } from "@/lib/blog"
 export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }) {
   return (
     <SlideUp index={index} hover>
-      <Link href={`/blog/${post.slug}/`} className="block h-full">
+      <Link href={`/blog/${post.slug}/`} className="block h-full" aria-label={`Read article: ${post.title}`}>
         <Card className="glow-border h-full bg-card/30 border-red-500/20 group">
           <CardHeader>
             <Badge variant="outline" className="w-fit border-red-500/30 text-red-400 font-geist mb-2">
@@ -23,10 +23,10 @@ export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 font-geist mb-4">
-              <span className="inline-flex items-center gap-1">
-                <Calendar className="h-3.5 w-3.5" />
+              <time dateTime={post.publishedAt} className="inline-flex items-center gap-1">
+                <Calendar className="h-3.5 w-3.5" aria-hidden />
                 {formatBlogDate(post.publishedAt)}
-              </span>
+              </time>
               <span className="inline-flex items-center gap-1">
                 <Clock className="h-3.5 w-3.5" />
                 {post.readTimeMinutes} min read

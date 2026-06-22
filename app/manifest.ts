@@ -15,14 +15,24 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "en-IN",
     icons: [
       {
-        src: "/icon.svg",
-        sizes: "any",
-        type: "image/svg+xml",
+        src: "/favicon.ico",
+        sizes: "48x48",
+        type: "image/x-icon",
       },
       {
-        src: "/images/logo.svg",
-        sizes: "200x40",
-        type: "image/svg+xml",
+        src: "/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        src: "/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        src: "/images/logo.png",
+        sizes: "3334x951",
+        type: "image/png",
       },
     ],
   }

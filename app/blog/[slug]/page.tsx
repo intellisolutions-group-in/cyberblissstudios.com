@@ -7,14 +7,16 @@ import { BlogCard } from "@/components/ui/blog-card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { articleSchema, createMetadata } from "@/lib/seo"
+import { articleSchema, createMetadata, webPageSchema } from "@/lib/seo"
 import {
   formatBlogDate,
   getAllPostSlugs,
   getPostBySlug,
+  getPostWordCount,
   getRelatedPosts,
 } from "@/lib/blog"
 import { Calendar, Clock, ArrowLeft } from "lucide-react"
+import company from "@/data/company.json"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -35,6 +37,7 @@ export async function generateMetadata({ params }: Props) {
     path: `/blog/${slug}/`,
     ogType: "article",
     publishedTime: post.publishedAt,
+    modifiedTime: post.publishedAt,
     authors: [post.author],
   })
 }
@@ -50,13 +53,23 @@ export default async function BlogDetailPage({ params }: Props) {
   return (
     <>
       <JsonLd
-        data={articleSchema({
-          title: post.title,
-          description: post.excerpt,
-          path: postPath,
-          publishedAt: post.publishedAt,
-          author: post.author,
-        })}
+        data={[
+          webPageSchema({
+            title: `${post.title} | ${company.brandName}`,
+            description: post.excerpt,
+            path: postPath,
+            dateModified: post.publishedAt,
+          }),
+          articleSchema({
+            title: post.title,
+            description: post.excerpt,
+            path: postPath,
+            publishedAt: post.publishedAt,
+            author: post.author,
+            articleSection: post.category,
+            wordCount: getPostWordCount(post),
+          }),
+        ]}
       />
       <InnerPage title={post.title} subtitle={post.excerpt} path={postPath}>
         <article className="container mx-auto px-4 max-w-3xl">
@@ -65,10 +78,10 @@ export default async function BlogDetailPage({ params }: Props) {
               <Badge variant="outline" className="border-red-500/30 text-red-400 font-geist">
                 {post.category}
               </Badge>
-              <span className="inline-flex items-center gap-1.5 text-sm text-gray-400 font-geist">
-                <Calendar className="h-4 w-4 text-red-500" />
+              <time dateTime={post.publishedAt} className="inline-flex items-center gap-1.5 text-sm text-gray-400 font-geist">
+                <Calendar className="h-4 w-4 text-red-500" aria-hidden />
                 {formatBlogDate(post.publishedAt)}
-              </span>
+              </time>
               <span className="inline-flex items-center gap-1.5 text-sm text-gray-400 font-geist">
                 <Clock className="h-4 w-4 text-red-500" />
                 {post.readTimeMinutes} min read

@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/ui/contact-form"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, serviceSchema } from "@/lib/seo"
+import { createMetadata, serviceSchema, webPageSchema } from "@/lib/seo"
 import { getServiceBySlug, getAllServiceSlugs, getRelatedServices } from "@/lib/services"
 import { CheckCircle } from "lucide-react"
 import company from "@/data/company.json"
@@ -44,12 +44,19 @@ export default async function ServiceDetailPage({ params }: Props) {
   return (
     <>
       <JsonLd
-        data={serviceSchema({
-          name: service.title,
-          description: service.shortDescription,
-          path: servicePath,
-          category: service.category,
-        })}
+        data={[
+          webPageSchema({
+            title: `${service.title} | ${company.brandName}`,
+            description: service.shortDescription,
+            path: servicePath,
+          }),
+          serviceSchema({
+            name: service.title,
+            description: service.shortDescription,
+            path: servicePath,
+            category: service.category,
+          }),
+        ]}
       />
       <InnerPage title={service.title} subtitle={service.shortDescription} path={servicePath}>
         <div className="container mx-auto px-4 max-w-4xl space-y-12">

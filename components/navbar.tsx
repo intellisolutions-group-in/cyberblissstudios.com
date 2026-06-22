@@ -1,18 +1,22 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Magnetic } from "@/components/premium/magnetic"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { services } from "@/lib/services"
 import { getServiceCount } from "@/lib/company-stats"
+import { LOGO_PATH } from "@/lib/seo"
+import company from "@/data/company.json"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
   { href: "/about/", label: "About" },
   { href: "/portfolio/", label: "Portfolio" },
   { href: "/blog/", label: "Blog" },
+  { href: "/faq/", label: "FAQ" },
   { href: "/careers/", label: "Careers" },
   { href: "/contact/", label: "Contact" },
 ]
@@ -96,8 +100,15 @@ export function Navbar() {
             )}
           >
             <div className="flex-shrink-0">
-              <Link href="/" className="font-orbitron text-xl font-bold text-white" data-cursor="pointer" aria-label="CyberBliss Studios — Home">
-                Cyber<span className="text-red-500">Bliss</span> Studios
+              <Link href="/" data-cursor="pointer" aria-label={`${company.brandName} — Home`}>
+                <Image
+                  src={LOGO_PATH}
+                  alt={`${company.brandName} logo`}
+                  width={222}
+                  height={63}
+                  className="h-8 sm:h-10 w-auto"
+                  priority
+                />
               </Link>
             </div>
 

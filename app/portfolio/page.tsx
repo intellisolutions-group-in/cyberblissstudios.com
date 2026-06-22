@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, webPageSchema } from "@/lib/seo"
+import { createMetadata, portfolioItemListSchema, webPageSchema } from "@/lib/seo"
 import portfolio from "@/data/portfolio.json"
 import company from "@/data/company.json"
 
@@ -21,11 +21,20 @@ export default function PortfolioPage() {
   return (
     <>
       <JsonLd
-        data={webPageSchema({
-          title: `Portfolio and Case Studies | ${company.brandName}`,
-          description: pageDescription,
-          path: "/portfolio/",
-        })}
+        data={[
+          webPageSchema({
+            title: `Portfolio and Case Studies | ${company.brandName}`,
+            description: pageDescription,
+            path: "/portfolio/",
+          }),
+          portfolioItemListSchema(
+            portfolio.map((project) => ({
+              title: project.title,
+              description: project.challenge,
+              type: project.type,
+            }))
+          ),
+        ]}
       />
       <InnerPage
         title="Portfolio"
@@ -44,15 +53,15 @@ export default function PortfolioPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Challenge</h4>
+                    <h3 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Challenge</h3>
                     <p className="text-gray-300 font-geist leading-relaxed">{project.challenge}</p>
                   </div>
                   <div>
-                    <h4 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Solution</h4>
+                    <h3 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Solution</h3>
                     <p className="text-gray-300 font-geist leading-relaxed">{project.solution}</p>
                   </div>
                   <div>
-                    <h4 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Technology Stack</h4>
+                    <h3 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Technology Stack</h3>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
                         <Badge key={tech} variant="secondary" className="font-geist">
@@ -62,7 +71,7 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Outcome</h4>
+                    <h3 className="text-red-400 font-orbitron text-sm font-semibold mb-2">Outcome</h3>
                     <p className="text-gray-300 font-geist leading-relaxed">{project.outcome}</p>
                   </div>
                 </CardContent>

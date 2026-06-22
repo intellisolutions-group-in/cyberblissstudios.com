@@ -10,7 +10,7 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
   return (
     <SlideUp index={index} hover>
       <TiltCard>
-        <Link href={`/services/${service.slug}/`} className="block h-full" data-cursor="pointer">
+        <Link href={`/services/${service.slug}/`} className="block h-full" data-cursor="pointer" aria-label={`Learn more about ${service.title}`}>
           <Card className="glow-border h-full bg-card/30 border-red-500/20 group glass-card transition-colors duration-300">
         <CardHeader>
           <Badge variant="outline" className="w-fit border-red-500/30 text-red-400 font-geist mb-2">

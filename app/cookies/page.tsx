@@ -1,7 +1,7 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { SlideUp } from "@/components/ui/slide-up"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, webPageSchema } from "@/lib/seo"
+import { createMetadata, LEGAL_LAST_UPDATED, LEGAL_LAST_UPDATED_DISPLAY, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
 export const metadata = createMetadata({
@@ -20,6 +20,7 @@ export default function CookiePolicy() {
           title: `Cookie Policy | ${company.brandName}`,
           description: pageDescription,
           path: "/cookies/",
+          dateModified: LEGAL_LAST_UPDATED,
         })}
       />
       <InnerPage
@@ -31,7 +32,7 @@ export default function CookiePolicy() {
         <div className="space-y-8">
           <SlideUp>
             <p className="text-gray-300 text-lg leading-relaxed font-geist glow-border rounded-lg p-6 bg-card/30">
-              Last updated: {new Date().toLocaleDateString("en-IN")}
+              Last updated: {LEGAL_LAST_UPDATED_DISPLAY}
             </p>
           </SlideUp>
 

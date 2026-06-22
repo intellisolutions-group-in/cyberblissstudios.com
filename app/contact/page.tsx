@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/ui/contact-form"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { contactPageSchema, createMetadata } from "@/lib/seo"
+import { contactPageSchema, createMetadata, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 import { Mail, Clock, MapPin } from "lucide-react"
 
@@ -14,10 +14,21 @@ export const metadata = createMetadata({
   path: "/contact/",
 })
 
+const pageDescription = `Get in touch with ${company.brandName} for software development inquiries, project quotes, and consultations.`
+
 export default function ContactPage() {
   return (
     <>
-      <JsonLd data={contactPageSchema()} />
+      <JsonLd
+        data={[
+          webPageSchema({
+            title: `Contact Us | ${company.brandName}`,
+            description: pageDescription,
+            path: "/contact/",
+          }),
+          contactPageSchema(),
+        ]}
+      />
       <InnerPage
         title="Contact Us"
         subtitle="We would love to hear about your project. Reach out and our team will respond promptly."

@@ -13,24 +13,18 @@ import { FAQSection } from "@/components/faq-section"
 import { ContactInquirySection } from "@/components/sections/contact-inquiry-section"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { faqSchema, webPageSchema } from "@/lib/seo"
-import faqData from "@/data/faq.json"
+import { webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
 export default function HomePage() {
-  const previewFaqs = faqData.flatMap((cat) => cat.items).slice(0, 6)
-
   return (
     <>
       <JsonLd
-        data={[
-          webPageSchema({
-            title: `${company.brandName} | IT & Software Development Company in India`,
-            description: company.description,
-            path: "/",
-          }),
-          faqSchema(previewFaqs),
-        ]}
+        data={webPageSchema({
+          title: `${company.brandName} | IT & Software Development Company in India`,
+          description: company.description,
+          path: "/",
+        })}
       />
       <main>
         <section aria-label="Hero">

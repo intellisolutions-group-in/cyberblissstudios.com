@@ -1,6 +1,8 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail } from "lucide-react"
 import company from "@/data/company.json"
+import { LOGO_PATH } from "@/lib/seo"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,18 +12,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="sm:col-span-2 lg:col-span-2">
-            <p className="font-orbitron text-2xl font-bold text-white mb-4">
-              Cyber<span className="text-red-500">Bliss</span> Studios
-            </p>
-            {/* Logo placeholder - uncomment when logo is available
             <Image
-              src="/images/logo.svg"
-              alt={`${company.brandName} Logo`}
-              width={128}
-              height={32}
+              src={LOGO_PATH}
+              alt={`${company.brandName} logo`}
+              width={178}
+              height={51}
               className="h-8 w-auto mb-4"
             />
-            */}
             <p className="font-geist text-gray-300 mb-6 max-w-md leading-relaxed">
               {company.tagline} Delivering reliable software solutions from India since {company.establishedYear}.
             </p>

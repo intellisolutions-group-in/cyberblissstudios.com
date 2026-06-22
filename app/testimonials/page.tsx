@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
-import { createMetadata, reviewSchema } from "@/lib/seo"
+import { createMetadata, testimonialReviewsSchema, webPageSchema } from "@/lib/seo"
 import testimonials from "@/data/testimonials.json"
 import company from "@/data/company.json"
 import { Star } from "lucide-react"
@@ -16,10 +16,21 @@ export const metadata = createMetadata({
   path: "/testimonials/",
 })
 
+const pageDescription = `Read what clients say about working with ${company.brandName} on software development projects.`
+
 export default function TestimonialsPage() {
   return (
     <>
-      <JsonLd data={reviewSchema(testimonials)} />
+      <JsonLd
+        data={[
+          webPageSchema({
+            title: `Client Testimonials | ${company.brandName}`,
+            description: pageDescription,
+            path: "/testimonials/",
+          }),
+          ...testimonialReviewsSchema(testimonials),
+        ]}
+      />
       <InnerPage
         title="Client Testimonials"
         subtitle="Feedback from clients who have partnered with us on software development projects"
