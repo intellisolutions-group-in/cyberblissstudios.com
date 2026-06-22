@@ -2,7 +2,8 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { ContactForm } from "@/components/ui/contact-form"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { contactPageSchema, createMetadata } from "@/lib/seo"
 import company from "@/data/company.json"
 import { Mail, Clock, MapPin } from "lucide-react"
 
@@ -16,9 +17,11 @@ export const metadata = createMetadata({
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={contactPageSchema()} />
       <InnerPage
         title="Contact Us"
         subtitle="We would love to hear about your project. Reach out and our team will respond promptly."
+        path="/contact/"
       >
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

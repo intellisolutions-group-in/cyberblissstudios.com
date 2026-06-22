@@ -12,7 +12,7 @@ const technologies = [
   { name: ".NET / C#", category: "Enterprise" },
   { name: "Flutter / React Native", category: "Mobile" },
   { name: "PostgreSQL / MongoDB", category: "Database" },
-  { name: "AWS / Azure", category: "Cloud" },
+  { name: "Cloud Platforms", category: "Cloud" },
   { name: "Docker / CI/CD", category: "DevOps" },
   { name: "TypeScript", category: "Language" },
 ]

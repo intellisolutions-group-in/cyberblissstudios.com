@@ -147,11 +147,14 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-svh uppercase items-center w-full absolute z-10 pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
+      <div
+        className="h-svh uppercase items-center w-full absolute z-10 pointer-events-none px-10 flex justify-center flex-col"
+        aria-hidden="true"
+      >
+        <p className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+          <span className="flex space-x-2 lg:space-x-6 overflow-hidden text-white justify-center">
             {titleWords.map((word, index) => (
-              <div
+              <span
                 key={index}
                 className={index < visibleWords ? "fade-in" : ""}
                 style={{
@@ -160,12 +163,12 @@ export const Hero3DWebGL = () => {
                 }}
               >
                 {word}
-              </div>
+              </span>
             ))}
-          </div>
-        </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
-          <div
+          </span>
+        </p>
+        <p className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4 normal-case">
+          <span
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
               animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`,
@@ -173,8 +176,8 @@ export const Hero3DWebGL = () => {
             }}
           >
             {subtitle}
-          </div>
-        </div>
+          </span>
+        </p>
       </div>
 
       <Canvas

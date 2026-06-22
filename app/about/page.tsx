@@ -1,8 +1,10 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
+import { getServiceCount, getYearsSinceEstablishment } from "@/lib/company-stats"
 import { CheckCircle } from "lucide-react"
 
 export const metadata = createMetadata({
@@ -12,22 +14,35 @@ export const metadata = createMetadata({
   path: "/about/",
 })
 
+const pageDescription = `Learn about ${company.brandName}, an India-based software development company established in ${company.establishedYear}.`
+
 export default function AboutPage() {
+  const years = getYearsSinceEstablishment()
+  const serviceCount = getServiceCount()
+
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          title: `About Us | ${company.brandName}`,
+          description: pageDescription,
+          path: "/about/",
+        })}
+      />
       <InnerPage
         title="About Us"
         subtitle={`Delivering premium software solutions from India since ${company.establishedYear}`}
+        path="/about/"
       >
         <div className="container mx-auto px-4 max-w-4xl space-y-12">
           <SlideUp hover>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-4">
               <div className="glow-border rounded-lg p-6 text-center bg-card/50">
-                <p className="text-4xl font-bold text-red-500 font-orbitron">{new Date().getFullYear() - company.establishedYear}+</p>
+                <p className="text-4xl font-bold text-red-500 font-orbitron">{years}+</p>
                 <p className="text-muted-foreground font-geist mt-2 text-sm">Years Experience</p>
               </div>
               <div className="glow-border rounded-lg p-6 text-center bg-card/50">
-                <p className="text-4xl font-bold text-red-500 font-orbitron">18+</p>
+                <p className="text-4xl font-bold text-red-500 font-orbitron">{serviceCount}+</p>
                 <p className="text-muted-foreground font-geist mt-2 text-sm">Service Areas</p>
               </div>
               <div className="glow-border rounded-lg p-6 text-center bg-card/50">
@@ -88,7 +103,7 @@ export default function AboutPage() {
                 Our engineering teams cover the full software development lifecycle: requirements analysis, UI/UX design, front-end and back-end development, database architecture, API integration, quality assurance, cloud deployment, and ongoing maintenance.
               </p>
               <p className="text-gray-300 leading-relaxed font-geist">
-                We work with modern technology stacks including React, Next.js, Node.js, Python, .NET, Flutter, and cloud platforms such as AWS and Azure. Every project is approached with security, scalability, and maintainability as foundational requirements.
+                We work with modern technology stacks including React, Next.js, Node.js, Python, .NET, Flutter, and cloud platforms. Every project is approached with security, scalability, and maintainability as foundational requirements.
               </p>
             </section>
           </SlideUp>
@@ -97,7 +112,7 @@ export default function AboutPage() {
             <section className="glow-border rounded-lg p-8 bg-card/30">
               <h2 className="text-2xl font-bold text-red-500 font-orbitron mb-4">Business Presence in India</h2>
               <p className="text-gray-300 leading-relaxed font-geist">
-                Based in India, we understand the unique needs of Indian businesses including regional payment integrations, compliance considerations, and the importance of mobile-first design for diverse connectivity conditions. We offer both remote and on-site engagement models to suit your project requirements.
+                Based in India, we understand the unique needs of Indian businesses including regional payment integrations, data protection considerations, and the importance of mobile-first design for diverse connectivity conditions. We offer both remote and on-site engagement models to suit your project requirements.
               </p>
             </section>
           </SlideUp>

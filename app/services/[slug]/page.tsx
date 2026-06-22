@@ -7,7 +7,8 @@ import { ServiceCard } from "@/components/ui/service-card"
 import { ContactForm } from "@/components/ui/contact-form"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, serviceSchema } from "@/lib/seo"
 import { getServiceBySlug, getAllServiceSlugs, getRelatedServices } from "@/lib/services"
 import { CheckCircle } from "lucide-react"
 import company from "@/data/company.json"
@@ -38,10 +39,19 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound()
 
   const related = getRelatedServices(slug)
+  const servicePath = `/services/${slug}/`
 
   return (
     <>
-      <InnerPage title={service.title} subtitle={service.shortDescription}>
+      <JsonLd
+        data={serviceSchema({
+          name: service.title,
+          description: service.shortDescription,
+          path: servicePath,
+          category: service.category,
+        })}
+      />
+      <InnerPage title={service.title} subtitle={service.shortDescription} path={servicePath}>
         <div className="container mx-auto px-4 max-w-4xl space-y-12">
           <SlideUp>
             <div className="flex flex-wrap gap-2">

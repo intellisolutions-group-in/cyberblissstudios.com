@@ -1,6 +1,7 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { SlideUp } from "@/components/ui/slide-up"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
 export const metadata = createMetadata({
@@ -9,9 +10,23 @@ export const metadata = createMetadata({
   path: "/cookies/",
 })
 
+const pageDescription = `Cookie Policy for ${company.brandName}. Learn how we use cookies on our website.`
+
 export default function CookiePolicy() {
   return (
-    <InnerPage title="Cookie Policy" subtitle="How we use cookies to improve your browsing experience">
+    <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Cookie Policy | ${company.brandName}`,
+          description: pageDescription,
+          path: "/cookies/",
+        })}
+      />
+      <InnerPage
+        title="Cookie Policy"
+        subtitle="How we use cookies to improve your browsing experience"
+        path="/cookies/"
+      >
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="space-y-8">
           <SlideUp>
@@ -83,5 +98,6 @@ export default function CookiePolicy() {
         </div>
       </div>
     </InnerPage>
+    </>
   )
 }

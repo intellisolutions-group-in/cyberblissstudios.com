@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Magnetic } from "@/components/premium/magnetic"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { services } from "@/lib/services"
+import { getServiceCount } from "@/lib/company-stats"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -79,6 +80,7 @@ export function Navbar() {
   return (
     <>
       <nav
+        aria-label="Main navigation"
         className={cn(
           "fixed top-0 left-0 right-0 z-[9000] transition-all duration-500 border-b",
           scrolled
@@ -94,7 +96,7 @@ export function Navbar() {
             )}
           >
             <div className="flex-shrink-0">
-              <Link href="/" className="font-orbitron text-xl font-bold text-white" data-cursor="pointer">
+              <Link href="/" className="font-orbitron text-xl font-bold text-white" data-cursor="pointer" aria-label="CyberBliss Studios — Home">
                 Cyber<span className="text-red-500">Bliss</span> Studios
               </Link>
             </div>
@@ -227,7 +229,7 @@ export function Navbar() {
                 })}
               </div>
               <div className="mt-6 pt-4 border-t border-red-500/10 flex justify-between items-center">
-                <p className="text-xs text-gray-500 font-geist">18+ services across the full stack</p>
+                <p className="text-xs text-gray-500 font-geist">{getServiceCount()}+ services across the full stack</p>
                 <Link
                   href="/services/"
                   className="text-sm text-red-500 hover:text-red-400 font-geist transition-colors"

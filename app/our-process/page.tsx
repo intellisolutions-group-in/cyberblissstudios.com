@@ -2,7 +2,8 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { ApplicationsTimeline } from "@/components/applications-timeline"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
 export const metadata = createMetadata({
@@ -11,6 +12,8 @@ export const metadata = createMetadata({
   keywords: ["development process", "Agile software development", "SDLC"],
   path: "/our-process/",
 })
+
+const pageDescription = `Learn about ${company.brandName}'s proven software development methodology from discovery through deployment and support.`
 
 const phases = [
   {
@@ -54,9 +57,17 @@ const phases = [
 export default function OurProcessPage() {
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Our Development Process | ${company.brandName}`,
+          description: pageDescription,
+          path: "/our-process/",
+        })}
+      />
       <InnerPage
         title="Our Development Process"
         subtitle="A structured, transparent methodology that delivers quality software on schedule"
+        path="/our-process/"
       >
         <SlideUp>
           <p className="text-gray-300 font-geist leading-relaxed text-center max-w-2xl mx-auto mb-16 px-4">

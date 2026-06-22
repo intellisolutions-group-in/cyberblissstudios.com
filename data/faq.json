@@ -57,7 +57,7 @@
     "items": [
       {
         "question": "What technologies do you use?",
-        "answer": "We work with modern stacks including React, Next.js, Node.js, Python, .NET, Flutter, React Native, PostgreSQL, MongoDB, AWS, Azure, and Docker. Technology choices are made based on project fit, not trends alone."
+        "answer": "We work with modern stacks including React, Next.js, Node.js, Python, .NET, Flutter, React Native, PostgreSQL, MongoDB, cloud platforms, and Docker. Technology choices are made based on project fit, not trends alone."
       },
       {
         "question": "Do you provide source code ownership?",
@@ -73,7 +73,7 @@
       },
       {
         "question": "Do you offer cloud deployment support?",
-        "answer": "We deploy applications to AWS, Azure, Google Cloud, and on-premise infrastructure. We also assist with CI/CD pipeline setup and infrastructure monitoring."
+        "answer": "We deploy applications to cloud platforms and on-premise infrastructure. We also assist with CI/CD pipeline setup and infrastructure monitoring."
       }
     ]
   },

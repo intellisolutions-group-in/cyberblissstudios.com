@@ -1,7 +1,8 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { BlogCard } from "@/components/ui/blog-card"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import { getAllPosts } from "@/lib/blog"
 import company from "@/data/company.json"
 
@@ -12,14 +13,24 @@ export const metadata = createMetadata({
   path: "/blog/",
 })
 
+const pageDescription = `Insights on software development, technology trends, and digital strategy from ${company.brandName}.`
+
 export default function BlogPage() {
   const posts = getAllPosts()
 
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Blog | ${company.brandName}`,
+          description: pageDescription,
+          path: "/blog/",
+        })}
+      />
       <InnerPage
         title="Blog"
         subtitle="Practical insights on software development, technology strategy, and building reliable digital products"
+        path="/blog/"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

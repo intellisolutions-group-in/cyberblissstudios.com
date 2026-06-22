@@ -2,7 +2,8 @@ import { InnerPage } from "@/components/layout/inner-page"
 import { ServiceCard } from "@/components/ui/service-card"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import { services } from "@/lib/services"
 import company from "@/data/company.json"
 
@@ -13,14 +14,24 @@ export const metadata = createMetadata({
   path: "/services/",
 })
 
+const pageDescription = `Explore the full range of IT and software development services offered by ${company.brandName}.`
+
 const categories = ["Web", "Mobile", "Desktop", "Enterprise", "Design", "Data", "Cloud", "Consulting"] as const
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Software Development Services | ${company.brandName}`,
+          description: pageDescription,
+          path: "/services/",
+        })}
+      />
       <InnerPage
         title="Our Services"
         subtitle="Comprehensive software development services for businesses of all sizes"
+        path="/services/"
       >
         <div className="container mx-auto px-4 max-w-7xl">
           {categories.map((category, categoryIndex) => {

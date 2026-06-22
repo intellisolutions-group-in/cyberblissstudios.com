@@ -1,6 +1,7 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { SlideUp } from "@/components/ui/slide-up"
-import { createMetadata } from "@/lib/seo"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata, webPageSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
 export const metadata = createMetadata({
@@ -9,9 +10,23 @@ export const metadata = createMetadata({
   path: "/privacy/",
 })
 
+const pageDescription = `Privacy Policy for ${company.brandName}. Learn how we collect, use, and protect your personal information.`
+
 export default function PrivacyPolicy() {
   return (
-    <InnerPage title="Privacy Policy" subtitle="How we collect, use, and protect your personal information">
+    <>
+      <JsonLd
+        data={webPageSchema({
+          title: `Privacy Policy | ${company.brandName}`,
+          description: pageDescription,
+          path: "/privacy/",
+        })}
+      />
+      <InnerPage
+        title="Privacy Policy"
+        subtitle="How we collect, use, and protect your personal information"
+        path="/privacy/"
+      >
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="space-y-8">
           <SlideUp>
@@ -98,5 +113,6 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </InnerPage>
+    </>
   )
 }

@@ -40,7 +40,7 @@ export function TestimonialsSection() {
                     <div>
                       <p className="font-semibold text-primary font-geist">{testimonial.name}</p>
                       <p className="text-sm text-muted-foreground font-geist">
-                        {testimonial.designation}, {testimonial.company}
+                        {testimonial.designation}
                       </p>
                     </div>
                   </div>

@@ -3,7 +3,7 @@
     "id": "senior-fullstack-developer",
     "title": "Senior Full Stack Developer",
     "department": "Engineering",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "We are looking for an experienced Full Stack Developer to design and build scalable web applications for our clients across diverse industries.",
     "requirements": [
@@ -18,13 +18,13 @@
     "id": "mobile-app-developer",
     "title": "Mobile App Developer",
     "department": "Engineering",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "Join our mobile team to build high-performance Android and iOS applications using modern cross-platform and native frameworks.",
     "requirements": [
       "3+ years of mobile development experience",
       "Proficiency in React Native or Flutter",
-      "Experience publishing apps to Google Play and App Store",
+      "Experience publishing apps to major mobile app stores",
       "Understanding of mobile UI/UX best practices",
       "Ability to work independently in a remote-friendly environment"
     ]
@@ -33,12 +33,12 @@
     "id": "ui-ux-designer",
     "title": "UI/UX Designer",
     "department": "Design",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "Create intuitive, visually compelling user interfaces and experiences for web and mobile applications used by businesses across India.",
     "requirements": [
       "3+ years of UI/UX design experience",
-      "Proficiency in Figma and design systems",
+      "Proficiency in industry design tools and design systems",
       "Portfolio demonstrating web and mobile design work",
       "Understanding of accessibility and responsive design principles",
       "Ability to collaborate closely with developers"
@@ -48,7 +48,7 @@
     "id": "qa-engineer",
     "title": "QA Engineer",
     "department": "Quality Assurance",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "Ensure the quality and reliability of our software deliverables through systematic manual and automated testing processes.",
     "requirements": [
@@ -63,9 +63,9 @@
     "id": "dotnet-developer",
     "title": ".NET Developer",
     "department": "Engineering",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
-    "description": "Develop and maintain Windows and enterprise applications using the Microsoft .NET ecosystem for our corporate clients.",
+    "description": "Develop and maintain Windows and enterprise applications using the .NET ecosystem for our corporate clients.",
     "requirements": [
       "4+ years of .NET development experience",
       "Proficiency in C#, ASP.NET Core, and SQL Server",
@@ -78,12 +78,12 @@
     "id": "devops-engineer",
     "title": "DevOps Engineer",
     "department": "Infrastructure",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "Build and maintain CI/CD pipelines, cloud infrastructure, and deployment processes that support our development teams and client projects.",
     "requirements": [
       "3+ years of DevOps or infrastructure experience",
-      "Experience with AWS or Azure cloud services",
+      "Experience with cloud platform services",
       "Proficiency in Docker, CI/CD tools, and scripting",
       "Understanding of monitoring and logging solutions",
       "Security-conscious approach to infrastructure management"
@@ -93,7 +93,7 @@
     "id": "business-analyst",
     "title": "Business Analyst",
     "department": "Delivery",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "Bridge the gap between client business needs and technical solutions by gathering requirements, documenting specifications, and supporting project delivery.",
     "requirements": [
@@ -108,7 +108,7 @@
     "id": "junior-software-developer",
     "title": "Junior Software Developer",
     "department": "Engineering",
-    "location": "Vadodara / Remote",
+    "location": "Hybrid",
     "type": "Full-time",
     "description": "An excellent opportunity for a motivated developer to grow their skills while contributing to real client projects under senior mentorship.",
     "requirements": [
