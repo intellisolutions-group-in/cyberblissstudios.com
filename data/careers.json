@@ -1,0 +1,122 @@
+[
+  {
+    "id": "senior-fullstack-developer",
+    "title": "Senior Full Stack Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "We are looking for an experienced Full Stack Developer to design and build scalable web applications for our clients across diverse industries.",
+    "requirements": [
+      "5+ years of experience in web application development",
+      "Strong proficiency in React, Next.js, and Node.js",
+      "Experience with RESTful APIs and database design",
+      "Solid understanding of Git, code reviews, and Agile practices",
+      "Excellent problem-solving and communication skills"
+    ]
+  },
+  {
+    "id": "mobile-app-developer",
+    "title": "Mobile App Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "Join our mobile team to build high-performance Android and iOS applications using modern cross-platform and native frameworks.",
+    "requirements": [
+      "3+ years of mobile development experience",
+      "Proficiency in React Native or Flutter",
+      "Experience publishing apps to Google Play and App Store",
+      "Understanding of mobile UI/UX best practices",
+      "Ability to work independently in a remote-friendly environment"
+    ]
+  },
+  {
+    "id": "ui-ux-designer",
+    "title": "UI/UX Designer",
+    "department": "Design",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "Create intuitive, visually compelling user interfaces and experiences for web and mobile applications used by businesses across India.",
+    "requirements": [
+      "3+ years of UI/UX design experience",
+      "Proficiency in Figma and design systems",
+      "Portfolio demonstrating web and mobile design work",
+      "Understanding of accessibility and responsive design principles",
+      "Ability to collaborate closely with developers"
+    ]
+  },
+  {
+    "id": "qa-engineer",
+    "title": "QA Engineer",
+    "department": "Quality Assurance",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "Ensure the quality and reliability of our software deliverables through systematic manual and automated testing processes.",
+    "requirements": [
+      "2+ years of software testing experience",
+      "Experience with test case design and bug tracking tools",
+      "Familiarity with API testing and basic automation frameworks",
+      "Attention to detail and analytical mindset",
+      "Good written communication for clear bug reports"
+    ]
+  },
+  {
+    "id": "dotnet-developer",
+    "title": ".NET Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "Develop and maintain Windows and enterprise applications using the Microsoft .NET ecosystem for our corporate clients.",
+    "requirements": [
+      "4+ years of .NET development experience",
+      "Proficiency in C#, ASP.NET Core, and SQL Server",
+      "Experience with Windows desktop or enterprise web applications",
+      "Understanding of software design patterns",
+      "Ability to work on legacy modernisation projects"
+    ]
+  },
+  {
+    "id": "devops-engineer",
+    "title": "DevOps Engineer",
+    "department": "Infrastructure",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "Build and maintain CI/CD pipelines, cloud infrastructure, and deployment processes that support our development teams and client projects.",
+    "requirements": [
+      "3+ years of DevOps or infrastructure experience",
+      "Experience with AWS or Azure cloud services",
+      "Proficiency in Docker, CI/CD tools, and scripting",
+      "Understanding of monitoring and logging solutions",
+      "Security-conscious approach to infrastructure management"
+    ]
+  },
+  {
+    "id": "business-analyst",
+    "title": "Business Analyst",
+    "department": "Delivery",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "Bridge the gap between client business needs and technical solutions by gathering requirements, documenting specifications, and supporting project delivery.",
+    "requirements": [
+      "3+ years of business analysis experience in IT projects",
+      "Strong requirements gathering and documentation skills",
+      "Experience with Agile project environments",
+      "Ability to create user stories, wireframes, and process flows",
+      "Excellent stakeholder communication skills"
+    ]
+  },
+  {
+    "id": "junior-software-developer",
+    "title": "Junior Software Developer",
+    "department": "Engineering",
+    "location": "Vadodara / Remote",
+    "type": "Full-time",
+    "description": "An excellent opportunity for a motivated developer to grow their skills while contributing to real client projects under senior mentorship.",
+    "requirements": [
+      "1+ years of software development experience or relevant internship",
+      "Knowledge of at least one programming language (JavaScript, Python, or C#)",
+      "Basic understanding of databases and web technologies",
+      "Eagerness to learn and accept feedback",
+      "Degree in Computer Science or related field preferred"
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "inventory-management-system",
+    "title": "Inventory Management System",
+    "type": "Enterprise Web Application",
+    "challenge": "A mid-sized distribution company struggled with manual stock tracking across multiple warehouses, leading to frequent stockouts and over-ordering.",
+    "solution": "We built a centralised inventory management platform with real-time stock visibility, automated reorder alerts, barcode scanning integration, and role-based dashboards for warehouse and management teams.",
+    "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "AWS"],
+    "outcome": "The client reduced stock discrepancies by 40% and improved order fulfilment speed within the first quarter after deployment."
+  },
+  {
+    "id": "patient-appointment-app",
+    "title": "Patient Appointment Platform",
+    "type": "Mobile Application",
+    "challenge": "A healthcare provider needed a digital solution to manage patient appointments, reduce no-shows, and streamline clinic scheduling.",
+    "solution": "We developed a cross-platform mobile app with online booking, SMS reminders, doctor availability management, and a secure patient records module compliant with data privacy requirements.",
+    "technologies": ["React Native", "Firebase", "Node.js", "MongoDB"],
+    "outcome": "Appointment no-shows decreased by 25% and administrative workload for front-desk staff reduced significantly."
+  },
+  {
+    "id": "ecommerce-marketplace",
+    "title": "Multi-Vendor E-commerce Marketplace",
+    "type": "E-commerce Platform",
+    "challenge": "A retail entrepreneur wanted to launch an online marketplace connecting local vendors with customers across multiple cities in India.",
+    "solution": "We delivered a scalable marketplace with vendor onboarding, product catalogues, payment gateway integration, order tracking, and an admin panel for platform management.",
+    "technologies": ["Next.js", "Stripe", "PostgreSQL", "AWS S3", "Docker"],
+    "outcome": "The platform onboarded 50+ vendors within three months of launch with steady month-on-month transaction growth."
+  },
+  {
+    "id": "field-service-app",
+    "title": "Field Service Management App",
+    "type": "Mobile + Web Application",
+    "challenge": "A facilities management company needed to coordinate field technicians, track job assignments, and capture service reports on-site.",
+    "solution": "We built a mobile app for technicians with GPS-based job routing, digital checklists, photo capture, and a web dashboard for dispatchers to assign and monitor work orders.",
+    "technologies": ["Flutter", "Google Maps API", ".NET Core", "SQL Server"],
+    "outcome": "Average job completion time improved by 30% and customer satisfaction scores increased due to faster response times."
+  },
+  {
+    "id": "learning-management-portal",
+    "title": "Learning Management Portal",
+    "type": "Web Application",
+    "challenge": "An education institute required an online platform to deliver courses, track student progress, and manage assessments remotely.",
+    "solution": "We created an LMS with course modules, video content delivery, quiz engines, progress analytics, and certificate generation for completed programmes.",
+    "technologies": ["React", "Django", "PostgreSQL", "AWS CloudFront"],
+    "outcome": "The institute expanded its reach to 2,000+ online learners within the first year of platform operation."
+  },
+  {
+    "id": "pos-integration-system",
+    "title": "POS Integration System",
+    "type": "Desktop + API Integration",
+    "challenge": "A retail chain needed to synchronise point-of-sale data across 20+ store locations with their central ERP system.",
+    "solution": "We developed a Windows-based POS connector application with real-time data sync, offline mode support, and a robust API layer connecting to the client's ERP backend.",
+    "technologies": ["C#", ".NET", "WCF", "SQL Server", "REST APIs"],
+    "outcome": "Data synchronisation delays were eliminated and central reporting accuracy improved across all store locations."
+  },
+  {
+    "id": "document-workflow-automation",
+    "title": "Document Workflow Automation",
+    "type": "Enterprise Application",
+    "challenge": "A professional services firm spent excessive time on manual document approvals and version control across departments.",
+    "solution": "We implemented a document workflow system with automated routing, digital signatures, version history, audit trails, and integration with existing email and storage systems.",
+    "technologies": ["Angular", "Java Spring Boot", "PostgreSQL", "Azure Blob Storage"],
+    "outcome": "Document approval cycles shortened by 50% and compliance audit preparation time reduced substantially."
+  },
+  {
+    "id": "analytics-dashboard",
+    "title": "Business Analytics Dashboard",
+    "type": "Cloud Application",
+    "challenge": "A logistics company lacked consolidated visibility into fleet performance, delivery metrics, and operational costs.",
+    "solution": "We built a cloud-hosted analytics dashboard aggregating data from GPS trackers, delivery systems, and financial records with interactive charts and exportable reports.",
+    "technologies": ["React", "Python", "Apache Kafka", "PostgreSQL", "AWS"],
+    "outcome": "Management gained real-time operational insights, enabling data-driven decisions that reduced fuel costs by 15%."
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Rajesh Mehta",
+    "designation": "Operations Director",
+    "company": "Logistics Firm",
+    "content": "CyberBliss Studios delivered our operations management platform on schedule with clean architecture and thorough documentation. Their team communicated clearly throughout the project and handled scope changes responsibly.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "designation": "Product Manager",
+    "company": "Healthcare Startup",
+    "content": "We engaged CyberBliss Studios for a patient scheduling application. The UI was intuitive, performance was solid, and their QA process caught issues before release. A dependable development partner.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Amit Patel",
+    "designation": "CTO",
+    "company": "FinTech Company",
+    "content": "Their API integration work connected our legacy systems with modern cloud services seamlessly. Security considerations were addressed from day one, which mattered greatly for our compliance requirements.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "Sneha Reddy",
+    "designation": "Founder",
+    "company": "E-commerce Brand",
+    "content": "Our e-commerce platform was rebuilt with improved checkout flows and mobile responsiveness. Sales conversion improved after launch, and the maintenance support has been responsive and professional.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Vikram Singh",
+    "designation": "IT Head",
+    "company": "Manufacturing Company",
+    "content": "CyberBliss Studios modernised our desktop inventory application while preserving critical business logic. The migration was smooth with minimal disruption to our warehouse operations.",
+    "rating": 5
+  },
+  {
+    "id": 6,
+    "name": "Ananya Iyer",
+    "designation": "Director of Technology",
+    "company": "Education Platform",
+    "content": "The cross-platform mobile app they built performs consistently on both Android and iOS. Their development process included regular demos that kept our stakeholders aligned.",
+    "rating": 5
+  },
+  {
+    "id": 7,
+    "name": "Karthik Nair",
+    "designation": "Project Lead",
+    "company": "Real Estate Group",
+    "content": "From requirements gathering to deployment, the team demonstrated strong technical depth. Our property management portal handles high traffic without issues during peak listing seasons.",
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "name": "Meera Joshi",
+    "designation": "Business Analyst",
+    "company": "Retail Chain",
+    "content": "CyberBliss Studios understood our retail workflows and translated them into a practical POS integration system. Training materials and handover documentation were comprehensive.",
+    "rating": 5
+  },
+  {
+    "id": 9,
+    "name": "Arjun Desai",
+    "designation": "Managing Partner",
+    "company": "Consulting Firm",
+    "content": "We needed a custom CRM tailored to our engagement model. The solution was delivered with flexible reporting and role-based access that our consultants use daily.",
+    "rating": 5
+  },
+  {
+    "id": 10,
+    "name": "Divya Krishnan",
+    "designation": "Head of Digital",
+    "company": "Hospitality Group",
+    "content": "Their UI/UX design work elevated our booking experience significantly. User feedback has been positive, and the development team implemented designs with pixel-level accuracy.",
+    "rating": 5
+  }
+]

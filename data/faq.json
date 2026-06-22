@@ -1,0 +1,106 @@
+[
+  {
+    "id": "general",
+    "title": "General",
+    "items": [
+      {
+        "question": "What services does CyberBliss Studios offer?",
+        "answer": "We offer end-to-end software development services including web development, mobile applications, desktop software, enterprise solutions, UI/UX design, database development, API integration, cloud applications, testing, and ongoing maintenance and support."
+      },
+      {
+        "question": "Where is CyberBliss Studios based?",
+        "answer": "CyberBliss Studios is an India-based software development company serving clients across India and internationally. We work with remote and on-site engagement models depending on project requirements."
+      },
+      {
+        "question": "How long has CyberBliss Studios been in business?",
+        "answer": "Our domain has been registered since 27 April 2004, and we have been delivering software development services since our establishment in 2004, bringing over two decades of industry experience."
+      },
+      {
+        "question": "What industries do you work with?",
+        "answer": "We work with organisations across healthcare, logistics, retail, manufacturing, education, hospitality, finance, and professional services. Our solutions are tailored to each industry's specific operational requirements."
+      },
+      {
+        "question": "Do you work with startups as well as enterprises?",
+        "answer": "Yes. We partner with early-stage startups building MVPs as well as established enterprises requiring scalable, secure, and maintainable software systems."
+      }
+    ]
+  },
+  {
+    "id": "projects",
+    "title": "Projects and Delivery",
+    "items": [
+      {
+        "question": "How do you start a new project?",
+        "answer": "Every project begins with a discovery phase where we understand your business goals, technical requirements, timelines, and constraints. We then provide a structured proposal with scope, milestones, and deliverables."
+      },
+      {
+        "question": "What development methodology do you follow?",
+        "answer": "We primarily follow Agile practices with two-week sprints, regular demos, and continuous feedback. For certain projects, we adapt to Waterfall or hybrid models based on client preference and regulatory needs."
+      },
+      {
+        "question": "How do you handle project communication?",
+        "answer": "We assign a dedicated project manager and conduct regular status updates via email, video calls, and project management tools. You receive visibility into progress, blockers, and upcoming milestones."
+      },
+      {
+        "question": "Can you work with our existing development team?",
+        "answer": "Absolutely. We frequently collaborate with in-house teams, providing additional capacity, specialised skills, or leadership for specific workstreams while integrating with your existing processes."
+      },
+      {
+        "question": "What is your typical project timeline?",
+        "answer": "Timelines vary by scope. A focused MVP may take 8 to 12 weeks, while enterprise platforms can span several months. We provide realistic estimates during the discovery phase."
+      }
+    ]
+  },
+  {
+    "id": "technical",
+    "title": "Technical",
+    "items": [
+      {
+        "question": "What technologies do you use?",
+        "answer": "We work with modern stacks including React, Next.js, Node.js, Python, .NET, Flutter, React Native, PostgreSQL, MongoDB, AWS, Azure, and Docker. Technology choices are made based on project fit, not trends alone."
+      },
+      {
+        "question": "Do you provide source code ownership?",
+        "answer": "Yes. Upon project completion and settlement of agreed fees, clients receive full ownership of the custom source code developed for their project, as defined in the project agreement."
+      },
+      {
+        "question": "How do you ensure software quality?",
+        "answer": "Quality is built into our process through code reviews, automated testing, manual QA cycles, performance checks, and security best practices before every release."
+      },
+      {
+        "question": "Can you integrate with third-party APIs and services?",
+        "answer": "Yes. We regularly integrate payment gateways, CRM systems, ERP platforms, authentication providers, mapping services, and other third-party APIs required by business applications."
+      },
+      {
+        "question": "Do you offer cloud deployment support?",
+        "answer": "We deploy applications to AWS, Azure, Google Cloud, and on-premise infrastructure. We also assist with CI/CD pipeline setup and infrastructure monitoring."
+      }
+    ]
+  },
+  {
+    "id": "support",
+    "title": "Support and Pricing",
+    "items": [
+      {
+        "question": "Do you provide post-launch support?",
+        "answer": "Yes. We offer maintenance and support packages covering bug fixes, security updates, performance optimisation, and feature enhancements after go-live."
+      },
+      {
+        "question": "How is project pricing structured?",
+        "answer": "We offer fixed-price contracts for well-defined scopes and time-and-materials models for evolving requirements. Pricing is transparent with no hidden charges."
+      },
+      {
+        "question": "How do I request a project quote?",
+        "answer": "Contact us through our contact page or email info@cyberblissstudios.com with a brief description of your requirements. We will schedule a consultation to discuss scope and provide an estimate."
+      },
+      {
+        "question": "What information should I include in my project inquiry?",
+        "answer": "Include your business objectives, target users, desired features, preferred platforms, timeline expectations, and any existing systems that need integration. The more detail you provide, the more accurate our proposal will be."
+      },
+      {
+        "question": "How do you protect client data and intellectual property?",
+        "answer": "We sign NDAs upon request, follow secure development practices, restrict access on a need-to-know basis, and treat all client information and intellectual property with strict confidentiality."
+      }
+    ]
+  }
+]
