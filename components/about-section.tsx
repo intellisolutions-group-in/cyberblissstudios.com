@@ -22,7 +22,7 @@ export function AboutSection() {
                 About {company.brandName}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4 font-geist">
-                Since {company.establishedYear}, {company.brandName} has been delivering custom software solutions to businesses across India and internationally. Our domain has been registered since {new Date(company.domainRegisteredDate).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}, reflecting our long-standing commitment to the industry.
+                Since {company.establishedYear}, {company.brandName} has been delivering custom software solutions to businesses across India and internationally. Our company has been registered since {new Date(company.companyRegisteredDate).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}, reflecting our long-standing commitment to the industry.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6 font-geist">
                 {company.description} We combine technical depth with practical business understanding to build applications that solve real operational challenges.

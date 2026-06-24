@@ -15,9 +15,9 @@ export function Footer() {
             <Image
               src={LOGO_PATH}
               alt={`${company.brandName} logo`}
-              width={178}
-              height={51}
-              className="h-8 w-auto mb-4"
+              width={350}
+              height={100}
+              className="h-10 sm:h-11 w-auto mb-4"
             />
             <p className="font-geist text-gray-300 mb-6 max-w-md leading-relaxed">
               {company.tagline} Delivering reliable software solutions from India since {company.establishedYear}.

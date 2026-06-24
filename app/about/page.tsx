@@ -60,7 +60,7 @@ export default function AboutPage() {
             <section className="glow-border rounded-lg p-8 bg-card/30">
               <h2 className="text-2xl font-bold text-red-500 font-orbitron mb-4">Company Overview</h2>
               <p className="text-gray-300 leading-relaxed font-geist mb-4">
-                {company.brandName} is an India-based IT and software development company specialising in custom web applications, mobile apps, desktop software, and enterprise solutions. Our domain has been registered since {new Date(company.domainRegisteredDate).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}, and we have been actively delivering software projects since {company.establishedYear}.
+                {company.brandName} is an India-based IT and software development company specialising in custom web applications, mobile apps, desktop software, and enterprise solutions. Our company has been registered since {new Date(company.companyRegisteredDate).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}, and we have been actively delivering software projects since {company.establishedYear}.
               </p>
               <p className="text-gray-300 leading-relaxed font-geist">
                 {company.description} We serve clients across India and internationally, combining local market understanding with global engineering standards.

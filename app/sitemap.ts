@@ -23,7 +23,7 @@ function getLastModified(path: string): Date {
   }
 
   if (path === "/about/") {
-    return new Date(company.domainRegisteredDate)
+    return new Date(company.companyRegisteredDate)
   }
 
   return STATIC_LAST_MODIFIED

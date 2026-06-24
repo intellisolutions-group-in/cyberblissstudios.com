@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { GsapProvider } from "@/components/gsap-provider"
 import { PremiumShell, CursorEffects } from "@/components/premium/premium-shell"
 import { JsonLd } from "@/components/seo/json-ld"
+import { CommandMenu } from "@/components/ui/command-menu"
 import { createMetadata, organizationSchema, websiteSchema } from "@/lib/seo"
 import company from "@/data/company.json"
 
@@ -52,6 +53,7 @@ export default function RootLayout({
             <div id="main-content">{children}</div>
             <Footer />
           </PremiumShell>
+          <CommandMenu />
           <CursorEffects />
         </GsapProvider>
       </body>
