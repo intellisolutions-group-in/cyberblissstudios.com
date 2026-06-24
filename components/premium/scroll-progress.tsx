@@ -1,44 +1,80 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { gsap, registerGsap } from "@/lib/gsap/register"
-import { useReducedMotion } from "@/lib/hooks/use-reduced-motion"
+import { useEffect, useState } from "react"
+import { ArrowUp } from "lucide-react"
 
 export function ScrollProgress() {
-  const barRef = useRef<HTMLDivElement>(null)
-  const reduced = useReducedMotion()
+  const [scrollPercent, setScrollPercent] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
-    if (reduced) return
-    registerGsap()
-    const bar = barRef.current
-    if (!bar) return
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (scrollHeight <= 0) {
+        setScrollPercent(0)
+        return
+      }
+      const pct = Math.min(100, Math.max(0, Math.round((window.scrollY / scrollHeight) * 100)))
+      setScrollPercent(pct)
+    }
 
-    gsap.set(bar, { scaleX: 0, transformOrigin: "left center" })
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    const ctx = gsap.context(() => {
-      gsap.to(bar, {
-        scaleX: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.3,
-        },
-      })
-    })
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
-    return () => ctx.revert()
-  }, [reduced])
-
-  if (reduced) return null
+  const isVisible = scrollPercent > 4
+  const radius = 18
+  const circumference = 2 * Math.PI * radius // ~113.1
 
   return (
-    <div
-      className="fixed top-0 left-0 right-0 z-[9020] h-[2px] bg-gradient-to-r from-red-600 via-red-500 to-red-400 pointer-events-none"
-      ref={barRef}
-      aria-hidden
-    />
+    <button
+      onClick={scrollToTop}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`fixed bottom-6 right-6 z-[8000] h-12 w-12 rounded-full bg-black/90 backdrop-blur-md border border-red-500/10 hover:border-red-500/30 flex items-center justify-center transition-all duration-300 outline-none cursor-pointer shadow-lg shadow-black/50 ${
+        isVisible
+          ? "opacity-100 translate-y-0 scale-100"
+          : "opacity-0 translate-y-4 scale-75 pointer-events-none"
+      }`}
+      aria-label="Scroll to top"
+      data-cursor="pointer"
+    >
+      {/* Radial Progress Circle SVG */}
+      <svg className="absolute inset-0 h-full w-full transform -rotate-90">
+        <circle
+          cx="24"
+          cy="24"
+          r={radius}
+          className="stroke-red-500/10 fill-none"
+          strokeWidth="2"
+        />
+        <circle
+          cx="24"
+          cy="24"
+          r={radius}
+          className="stroke-red-500 fill-none transition-all duration-300 ease-out"
+          strokeWidth="2"
+          strokeDasharray={circumference}
+          strokeDashoffset={circumference * (1 - scrollPercent / 100)}
+          strokeLinecap="round"
+        />
+      </svg>
+
+      {/* Center Label (percentage or arrow) */}
+      <div className="relative z-10 flex items-center justify-center">
+        {isHovered ? (
+          <ArrowUp className="h-4 w-4 text-red-500 animate-bounce" />
+        ) : (
+          <span className="text-[9px] font-orbitron font-bold text-white tracking-tighter">
+            {scrollPercent}%
+          </span>
+        )}
+      </div>
+    </button>
   )
 }

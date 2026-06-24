@@ -1,5 +1,5 @@
 import { InnerPage } from "@/components/layout/inner-page"
-import { BlogCard } from "@/components/ui/blog-card"
+import { BlogGrid } from "@/components/blog/blog-grid"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
 import { createMetadata, blogCollectionSchema, webPageSchema } from "@/lib/seo"
@@ -43,11 +43,7 @@ export default function BlogPage() {
         path="/blog/"
       >
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, index) => (
-              <BlogCard key={post.slug} post={post} index={index} />
-            ))}
-          </div>
+          <BlogGrid posts={posts} />
         </div>
       </InnerPage>
       <CTASection />

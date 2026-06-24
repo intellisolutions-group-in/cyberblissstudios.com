@@ -64,15 +64,6 @@ export default function ContactPage() {
             </SlideUp>
           </div>
 
-          <SlideUp delay={0.2} className="mt-16">
-            <div className="glow-border rounded-lg p-8 bg-card/20 text-center hover:shadow-lg transition-all duration-300">
-              <MapPin className="h-8 w-8 text-red-500 mx-auto mb-4" />
-              <h3 className="text-xl font-orbitron text-white mb-2">Location</h3>
-              <p className="text-gray-400 font-geist">
-                {company.brandName} operates from India, serving clients nationwide and internationally through remote collaboration.
-              </p>
-            </div>
-          </SlideUp>
         </div>
       </InnerPage>
       <CTASection />

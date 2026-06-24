@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Magnetic } from "@/components/premium/magnetic"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Search } from "lucide-react"
 import { services } from "@/lib/services"
 import { getServiceCount } from "@/lib/company-stats"
 import { LOGO_PATH } from "@/lib/seo"
@@ -104,9 +104,12 @@ export function Navbar() {
                 <Image
                   src={LOGO_PATH}
                   alt={`${company.brandName} logo`}
-                  width={222}
-                  height={63}
-                  className="h-8 sm:h-10 w-auto"
+                  width={350}
+                  height={100}
+                  className={cn(
+                    "w-auto transition-all duration-500",
+                    scrolled ? "h-8 sm:h-9" : "h-9 sm:h-11"
+                  )}
                   priority
                 />
               </Link>
@@ -155,7 +158,19 @@ export function Navbar() {
               </div>
             </div>
 
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex items-center gap-4">
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent("toggle-command-menu"))}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-red-500/10 hover:border-red-500/30 bg-black/40 hover:bg-red-500/5 text-gray-400 hover:text-white transition-all text-xs font-geist cursor-pointer group"
+                aria-label="Search site"
+              >
+                <Search size={14} className="text-gray-500 group-hover:text-red-500 transition-colors" />
+                <span>Search</span>
+                <kbd className="pointer-events-none select-none px-1.5 py-0.5 rounded border border-red-500/10 bg-black/80 font-mono text-[9px] text-gray-500 group-hover:text-red-400 transition-colors ml-1">
+                  Ctrl+K
+                </kbd>
+              </button>
+
               <Magnetic strength={0.25}>
                 <Link href="/contact/" data-cursor="pointer">
                   <Button className="bg-red-500 hover:bg-red-600 text-white font-geist border-0 shadow-lg shadow-red-500/20">
@@ -165,10 +180,17 @@ export function Navbar() {
               </Magnetic>
             </div>
 
-            <div className="lg:hidden">
+            <div className="lg:hidden flex items-center gap-4">
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent("toggle-command-menu"))}
+                className="text-white hover:text-red-500 transition-colors duration-200 cursor-pointer"
+                aria-label="Search"
+              >
+                <Search size={20} />
+              </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white hover:text-red-500 transition-colors duration-200"
+                className="text-white hover:text-red-500 transition-colors duration-200 cursor-pointer"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}

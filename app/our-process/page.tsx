@@ -1,5 +1,6 @@
 import { InnerPage } from "@/components/layout/inner-page"
 import { ApplicationsTimeline } from "@/components/applications-timeline"
+import { ScrollProcess } from "@/components/process/scroll-process"
 import { SlideUp } from "@/components/ui/slide-up"
 import { CTASection } from "@/components/cta-section"
 import { JsonLd } from "@/components/seo/json-ld"
@@ -77,30 +78,12 @@ export default function OurProcessPage() {
 
         <ApplicationsTimeline showHeader={false} />
 
-        <div className="container mx-auto px-4 max-w-4xl space-y-12 pt-16">
+        <div className="pt-16 pb-12">
           <SlideUp>
             <h2 className="text-3xl font-bold text-white font-orbitron text-center mb-12">Detailed Phase Breakdown</h2>
           </SlideUp>
 
-          {phases.map((phase, index) => (
-            <SlideUp key={phase.step} index={index} hover>
-              <div className="glow-border rounded-lg p-8 bg-card/30 h-full">
-                <div className="flex items-start gap-6">
-                  <span className="text-4xl font-orbitron font-bold text-red-500">{phase.step}</span>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-orbitron text-white font-semibold mb-3">{phase.title}</h3>
-                    <p className="text-gray-300 font-geist leading-relaxed mb-4">{phase.description}</p>
-                    <h4 className="text-sm font-orbitron text-red-400 mb-2">Key Deliverables</h4>
-                    <ul className="list-disc list-inside text-gray-400 font-geist space-y-1">
-                      {phase.deliverables.map((d) => (
-                        <li key={d}>{d}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </SlideUp>
-          ))}
+          <ScrollProcess phases={phases} />
         </div>
       </InnerPage>
       <CTASection />

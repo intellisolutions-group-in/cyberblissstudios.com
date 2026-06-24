@@ -49,19 +49,19 @@ export function Breadcrumbs({ path, currentTitle }: BreadcrumbsProps) {
   return (
     <>
       <JsonLd data={breadcrumbSchema(items)} />
-      <nav aria-label="Breadcrumb" className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-2">
-        <ol className="flex flex-wrap items-center gap-1 text-sm font-geist text-gray-400">
+      <nav aria-label="Breadcrumb" className="flex justify-center mb-3">
+        <ol className="flex flex-wrap items-center justify-center gap-1.5 text-xs sm:text-sm font-geist text-gray-400">
           {items.map((item, index) => {
             const isLast = index === items.length - 1
             return (
-              <li key={item.path} className="flex items-center gap-1">
-                {index > 0 && <ChevronRight className="h-3.5 w-3.5 shrink-0 text-gray-600" aria-hidden />}
+              <li key={item.path} className="flex items-center gap-1.5">
+                {index > 0 && <ChevronRight className="h-3 w-3 shrink-0 text-red-500/50" aria-hidden />}
                 {isLast ? (
-                  <span className="text-gray-300" aria-current="page">
+                  <span className="text-gray-300 font-medium" aria-current="page">
                     {item.name}
                   </span>
                 ) : (
-                  <Link href={item.path} className="hover:text-red-500 transition-colors">
+                  <Link href={item.path} className="hover:text-red-500 transition-colors duration-200">
                     {item.name}
                   </Link>
                 )}
