@@ -128,7 +128,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-red-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-geist text-gray-400 text-sm">
-              &copy; {currentYear} {company.brandName}. All rights reserved.
+              Copyright &copy; {company.establishedYear}- {currentYear} {company.brandName}. All Rights Reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link href="/privacy/" className="font-geist text-gray-400 hover:text-red-500 text-sm transition-colors duration-200">
