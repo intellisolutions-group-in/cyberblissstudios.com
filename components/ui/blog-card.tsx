@@ -23,10 +23,7 @@ export function BlogCard({ post, index = 0 }: { post: BlogPost; index?: number }
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 font-geist mb-4">
-              <time dateTime={post.publishedAt} className="inline-flex items-center gap-1">
-                <Calendar className="h-3.5 w-3.5" aria-hidden />
-                {formatBlogDate(post.publishedAt)}
-              </time>
+
               <span className="inline-flex items-center gap-1">
                 <Clock className="h-3.5 w-3.5" />
                 {post.readTimeMinutes} min read

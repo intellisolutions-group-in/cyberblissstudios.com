@@ -19,7 +19,7 @@ interface BlogGridProps {
   posts: BlogPost[]
 }
 
-const ITEMS_PER_PAGE = 3
+const ITEMS_PER_PAGE = 6
 
 export function BlogGrid({ posts }: BlogGridProps) {
   const [searchQuery, setSearchQuery] = useState("")
@@ -74,51 +74,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
 
   return (
     <div className="space-y-8">
-      {/* Search & Filter Controls */}
-      <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-card/20 p-6 rounded-lg border border-red-500/10 glow-border">
-        {/* Search Input */}
-        <div className="relative w-full md:max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
-          <Input
-            type="text"
-            placeholder="Search articles by title, tags, content..."
-            value={searchQuery}
-            onChange={(e) => handleSearchChange(e.target.value)}
-            className="pl-9 pr-9 h-10 bg-black/50 border-red-500/20 focus-visible:border-red-500/50 focus-visible:ring-red-500/20 text-white font-geist placeholder:text-gray-500"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => handleSearchChange("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
-              aria-label="Clear search"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          )}
-        </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 w-full md:w-auto justify-start md:justify-end">
-          {categories.map((category) => {
-            const isActive = selectedCategory === category
-            return (
-              <Button
-                key={category}
-                variant="outline"
-                size="sm"
-                onClick={() => handleCategoryChange(category)}
-                className={`font-orbitron text-xs tracking-wider transition-all duration-200 ${
-                  isActive
-                    ? "bg-red-500 text-white border-red-500 shadow-md shadow-red-500/20 hover:bg-red-600 hover:text-white"
-                    : "border-red-500/20 text-gray-400 bg-black/30 hover:border-red-500/50 hover:text-white"
-                }`}
-              >
-                {category}
-              </Button>
-            )
-          })}
-        </div>
-      </div>
 
       {/* Grid Content */}
       {paginatedPosts.length > 0 ? (
@@ -173,11 +129,10 @@ export function BlogGrid({ posts }: BlogGridProps) {
                         e.preventDefault()
                         setCurrentPage(pageNum)
                       }}
-                      className={`h-9 w-9 flex items-center justify-center font-geist border transition-all duration-200 ${
-                        currentPage === pageNum
-                          ? "bg-red-500/20 border-red-500 text-red-400 hover:bg-red-500/30"
-                          : "border-red-500/10 text-gray-400 bg-black/20 hover:bg-red-500/10 hover:text-white"
-                      }`}
+                      className={`h-9 w-9 flex items-center justify-center font-geist border transition-all duration-200 ${currentPage === pageNum
+                        ? "bg-red-500/20 border-red-500 text-red-400 hover:bg-red-500/30"
+                        : "border-red-500/10 text-gray-400 bg-black/20 hover:bg-red-500/10 hover:text-white"
+                        }`}
                     >
                       {pageNum}
                     </PaginationLink>

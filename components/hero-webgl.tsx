@@ -148,11 +148,11 @@ export const Hero3DWebGL = () => {
       </div>
 
       <div
-        className="h-svh uppercase items-center w-full absolute z-10 pointer-events-none px-10 flex justify-center flex-col"
+        className="h-svh uppercase items-center w-full absolute z-10 pointer-events-none px-4 md:px-10 flex justify-center flex-col text-center"
         aria-hidden="true"
       >
-        <p className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <span className="flex space-x-2 lg:space-x-6 overflow-hidden text-white justify-center">
+        <p className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+          <span className="flex flex-wrap gap-x-2 md:gap-x-4 lg:gap-x-6 gap-y-2 overflow-hidden text-white justify-center">
             {titleWords.map((word, index) => (
               <span
                 key={index}

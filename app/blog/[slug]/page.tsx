@@ -78,10 +78,7 @@ export default async function BlogDetailPage({ params }: Props) {
               <Badge variant="outline" className="border-red-500/30 text-red-400 font-geist">
                 {post.category}
               </Badge>
-              <time dateTime={post.publishedAt} className="inline-flex items-center gap-1.5 text-sm text-gray-400 font-geist">
-                <Calendar className="h-4 w-4 text-red-500" aria-hidden />
-                {formatBlogDate(post.publishedAt)}
-              </time>
+
               <span className="inline-flex items-center gap-1.5 text-sm text-gray-400 font-geist">
                 <Clock className="h-4 w-4 text-red-500" />
                 {post.readTimeMinutes} min read
